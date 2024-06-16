@@ -11,7 +11,7 @@ Node.js - 20.11.1
 
 ## Instalação
 1. **Clonar o repositório:**
-<br>`git clone https://github.com/seu-usuario/seu-projeto.git`
+<br>`git clone https://github.com/lugialo/projeto_banco2`
 
 
 2. **Instalar as dependências:**

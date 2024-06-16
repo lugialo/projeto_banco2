@@ -15,8 +15,8 @@ Contém a lógica de interface com o usuário (UI) e a API, onde as requisiçõe
 #### 2. `Application`
 Contém a lógica de aplicação e coordena as operações entre as camadas de domínio e infraestrutura. 
 
-- **services**: Contém a lógica de aplicação, onde a coordenação entre diferentes repositórios e outras partes do sistema ocorre.
-  - Exemplo: `UserService.ts`, `OrderService.ts`
+- **useCases**: Contém a lógica de aplicação, onde a coordenação entre diferentes repositórios e outras partes do sistema ocorre.
+  - Exemplo: `UserUseCase.ts`, `OrderUseCase.ts`
 
 - **dtos**: Data Transfer Objects, usados para transferir dados entre as camadas da aplicação.
   - Exemplo: `UserDTO.ts`, `OrderDTO.ts`
@@ -38,7 +38,7 @@ Contém a implementação de todos os detalhes de infraestrutura, como acesso a 
 
 - **persistence**: Implementações concretas de repositórios, gerenciadores de transações, etc.
   - **prisma**: Configurações e instâncias do Prisma.
-    - Exemplo: `PrismaClientSingleton.ts`, `prismaMultiTenant.ts`
+    - Exemplo: `PrismaClient.ts`
   - **repositories**: Implementações das interfaces de repositório definidas na camada de domínio.
     - Exemplo: `PrismaUserRepository.ts`, `PrismaOrderRepository.ts`
 
