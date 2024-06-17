@@ -6,6 +6,7 @@ const DentistRouter = Router();
 
 DentistRouter.post("/dentists", (req, res) => dentistController.create(req, res));
 DentistRouter.get("/dentists/:id", (req, res) => dentistController.get(req, res));
+DentistRouter.get("/dentists", (req, res) => dentistController.getAll(req, res));
 DentistRouter.put("/dentists/:id", (req, res) => dentistController.update(req, res));
 DentistRouter.delete("/dentists/:id", (req, res) => dentistController.delete(req, res));
 

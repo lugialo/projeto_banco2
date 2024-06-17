@@ -43,6 +43,18 @@ export class DentistRepository implements IDentistRepository {
     );
   }
 
+  async findAll(): Promise<Dentist[]> {
+    const dentists = await prisma.odontologista.findMany();
+  
+    return dentists.map(dentist => new Dentist(
+      dentist.id_odontologista,
+      dentist.nome_odontologista,
+      dentist.especialidade,
+      dentist.cro
+    ));
+  }
+  
+
   async update(dentist: Dentist): Promise<Dentist> {
     const updatedDentist = await prisma.odontologista
       .update({
