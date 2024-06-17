@@ -1,0 +1,97 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model agendamento {
+  id_agendamento                 Int           
+  data_agendamento               DateTime?     @db.DateTime(0)
+  status_agendamento             String?       @db.VarChar(100)
+  paciente_id_paciente           Int
+  odontologista_id_odontologista Int
+  odontologista                  odontologista @relation(fields: [odontologista_id_odontologista], references: [id_odontologista], onDelete: NoAction, onUpdate: NoAction, map: "fk_agendamento_odontologista1")
+  paciente                       paciente      @relation(fields: [paciente_id_paciente], references: [id_paciente], onDelete: NoAction, onUpdate: NoAction, map: "fk_agendamento_paciente1")
+  consulta                       consulta[]
+
+  @@id([id_agendamento])
+  @@index([odontologista_id_odontologista], map: "fk_agendamento_odontologista1_idx")
+  @@index([paciente_id_paciente], map: "fk_agendamento_paciente1_idx")
+}
+
+model consulta {
+  id_consulta                Int
+  data_hora                  DateTime?               @db.DateTime(0)
+  diagnostico                String?                 @db.LongText
+  tratamento                 String?                 @db.LongText
+  agendamento_id_agendamento Int
+  agendamento                agendamento             @relation(fields: [agendamento_id_agendamento], references: [id_agendamento], onDelete: NoAction, onUpdate: NoAction, map: "fk_consulta_agendamento1")
+  consulta_procedimento      consulta_procedimento[]
+  pagamento                  pagamento[]
+
+  @@id([id_consulta])
+  @@index([agendamento_id_agendamento], map: "fk_consulta_agendamento1_idx")
+}
+
+model consulta_procedimento {
+  id_consulta_procedimento     Int
+  consulta_id_consulta         Int
+  procedimento_id_procedimento Int
+  consulta                     consulta     @relation(fields: [consulta_id_consulta], references: [id_consulta], onDelete: NoAction, onUpdate: NoAction, map: "fk_consulta_procedimento_consulta1")
+  procedimento                 procedimento @relation(fields: [procedimento_id_procedimento], references: [id_procedimento], onDelete: NoAction, onUpdate: NoAction, map: "fk_consulta_procedimento_procedimento1")
+
+  @@id([id_consulta_procedimento, consulta_id_consulta, procedimento_id_procedimento])
+  @@index([consulta_id_consulta], map: "fk_consulta_procedimento_consulta1_idx")
+  @@index([procedimento_id_procedimento], map: "fk_consulta_procedimento_procedimento1_idx")
+}
+
+model odontologista {
+  id_odontologista   Int           @id
+  nome_odontologista String?       @db.VarChar(100)
+  especialidade      String?       @db.VarChar(100)
+  cro                String?       @db.VarChar(20)
+  agendamento        agendamento[]
+}
+
+model paciente {
+  id_paciente   Int           @id
+  nome_paciente String?       @db.VarChar(100)
+  cpf_paciente  String?       @db.VarChar(11)
+  telefone      String?       @db.VarChar(15)
+  endereco      String?       @db.VarChar(200)
+  genero        String?       @db.Char(1)
+  data_nasc     DateTime?     @db.Date
+  email         String?       @db.VarChar(100)
+  agendamento   agendamento[]
+}
+
+model pagamento {
+  id_pagamento                     Int
+  valor_pago                       Decimal?       @db.Decimal(10, 2)
+  data_pagamento                   DateTime?      @db.DateTime(0)
+  tipo_pagamento_id_tipo_pagamento Int
+  consulta_id_consulta             Int
+  consulta                         consulta       @relation(fields: [consulta_id_consulta], references: [id_consulta], onDelete: NoAction, onUpdate: NoAction, map: "fk_pagamento_consulta1")
+  tipo_pagamento                   tipo_pagamento @relation(fields: [tipo_pagamento_id_tipo_pagamento], references: [id_tipo_pagamento], onDelete: NoAction, onUpdate: NoAction, map: "fk_pagamento_tipo_pagamento")
+
+  @@id([id_pagamento, tipo_pagamento_id_tipo_pagamento, consulta_id_consulta])
+  @@index([consulta_id_consulta], map: "fk_pagamento_consulta1_idx")
+  @@index([tipo_pagamento_id_tipo_pagamento], map: "fk_pagamento_tipo_pagamento_idx")
+}
+
+model procedimento {
+  id_procedimento        Int                     @id
+  nome_procedimento      String?                 @db.VarChar(100)
+  descricao_procedimento String?                 @db.VarChar(100)
+  procedimentocol        String?                 @db.VarChar(45)
+  consulta_procedimento  consulta_procedimento[]
+}
+
+model tipo_pagamento {
+  id_tipo_pagamento        Int         @id
+  descricao_tipo_pagamento String?     @db.VarChar(100)
+  pagamento                pagamento[]
+}
