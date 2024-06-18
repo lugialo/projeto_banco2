@@ -8,7 +8,7 @@ datasource db {
 }
 
 model agendamento {
-  id_agendamento                 Int           
+  id_agendamento                 Int           @default(autoincrement())       
   data_agendamento               DateTime?     @db.DateTime(0)
   status_agendamento             String?       @db.VarChar(100)
   paciente_id_paciente           Int
@@ -23,7 +23,7 @@ model agendamento {
 }
 
 model consulta {
-  id_consulta                Int
+  id_consulta                Int                     @default(autoincrement())
   data_hora                  DateTime?               @db.DateTime(0)
   diagnostico                String?                 @db.LongText
   tratamento                 String?                 @db.LongText
@@ -37,7 +37,7 @@ model consulta {
 }
 
 model consulta_procedimento {
-  id_consulta_procedimento     Int
+  id_consulta_procedimento     Int  @default(autoincrement())
   consulta_id_consulta         Int
   procedimento_id_procedimento Int
   consulta                     consulta     @relation(fields: [consulta_id_consulta], references: [id_consulta], onDelete: NoAction, onUpdate: NoAction, map: "fk_consulta_procedimento_consulta1")
@@ -49,7 +49,7 @@ model consulta_procedimento {
 }
 
 model odontologista {
-  id_odontologista   Int           @id
+  id_odontologista   Int           @id @default(autoincrement())
   nome_odontologista String?       @db.VarChar(100)
   especialidade      String?       @db.VarChar(100)
   cro                String?       @db.VarChar(20)
@@ -57,7 +57,7 @@ model odontologista {
 }
 
 model paciente {
-  id_paciente   Int           @id
+  id_paciente   Int           @id @default(autoincrement())
   nome_paciente String?       @db.VarChar(100)
   cpf_paciente  String?       @db.VarChar(11)
   telefone      String?       @db.VarChar(15)
@@ -69,7 +69,7 @@ model paciente {
 }
 
 model pagamento {
-  id_pagamento                     Int
+  id_pagamento                     Int            @default(autoincrement())
   valor_pago                       Decimal?       @db.Decimal(10, 2)
   data_pagamento                   DateTime?      @db.DateTime(0)
   tipo_pagamento_id_tipo_pagamento Int
@@ -83,7 +83,7 @@ model pagamento {
 }
 
 model procedimento {
-  id_procedimento        Int                     @id
+  id_procedimento        Int                     @id  @default(autoincrement())
   nome_procedimento      String?                 @db.VarChar(100)
   descricao_procedimento String?                 @db.VarChar(100)
   procedimentocol        String?                 @db.VarChar(45)
@@ -91,7 +91,7 @@ model procedimento {
 }
 
 model tipo_pagamento {
-  id_tipo_pagamento        Int         @id
+  id_tipo_pagamento        Int         @id   @default(autoincrement())
   descricao_tipo_pagamento String?     @db.VarChar(100)
   pagamento                pagamento[]
 }
