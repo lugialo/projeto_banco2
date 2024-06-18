@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --exit-child --transpile-only --ignore-watch node_modules --clear src/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx prisma generate && tsc"
+    "build": "npx prisma generate && tsc",
+    "postmigration": "ts-node scripts/add-triggers.ts"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +20,11 @@
     "express": "^4.19.2",
     "express-async-errors": "^3.1.1",
     "prisma": "^5.15.0",
+    "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.5"
   }
 }
