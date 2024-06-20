@@ -1,4 +1,7 @@
 Exemplifique qual a especialidade de dentistas que teve mais agendamentos nos últimos 4 meses juntamente com o procedimento que mais foi realizado pelos especialistas.
 
-
 Qual o diagnóstico que teve maior incidência em pacientes com idades inferiores a 16 anos em ambos os gêneros durante os primeiros 6 meses do ano.
+
+Qual é a média de idade dos pacientes que realizaram procedimentos de restauração dentária nos últimos três meses, agrupados por faixas etárias, para os pacientes do sexo feminino?
+
+Qual é o meio de pagamento mais utliziado, nos ultimos 6 meses, entre pacientes do sexo feminino na faixa etária de 18 a 55 anos, em ordem decrescente?
