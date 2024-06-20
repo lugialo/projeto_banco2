@@ -1,0 +1,4 @@
+Exemplifique qual a especialidade de dentistas que teve mais agendamentos nos últimos 4 meses juntamente com o procedimento que mais foi realizado pelos especialistas.
+
+
+Qual o diagnóstico que teve maior incidência em pacientes com idades inferiores a 16 anos em ambos os gêneros durante os primeiros 6 meses do ano.
