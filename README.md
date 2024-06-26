@@ -21,7 +21,13 @@ Para este projeto, utilizamos o banco de dados [MySQL](https://www.mysql.com/).
 <br>Para hospedagem, utilizamos o serviço do [Digital Ocean](https://www.digitalocean.com/).
 
 Abaixo, segue os scripts SQL separados por tipo:
-(falta organizar essa parte)
+
+- DDL [ddl.sql](https://github.com/lugialo/projeto_banco2/blob/main/scripts_sql/ddl.sql)
+- DML [dml.sql](https://github.com/lugialo/projeto_banco2/blob/main/scripts_sql/dml.sql)
+- Functions [functions.sql](https://github.com/lugialo/projeto_banco2/blob/main/scripts_sql/functions.sql)
+- Índices [indices.sql](https://github.com/lugialo/projeto_banco2/blob/main/scripts_sql/indices.sql)
+- Stored Procedures [stored_procedures.sql](https://github.com/lugialo/projeto_banco2/blob/main/scripts_sql/stored_procedures.sql)
+- Triggers [triggers.sql](https://github.com/lugialo/projeto_banco2/blob/main/scripts_sql/triggers.sql)
 
 ### Código Fonte do CRUD
 - Linguagem de programação [TypeScript v5.4.5](https://www.typescriptlang.org/)
