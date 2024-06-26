@@ -11,14 +11,14 @@ Vitor Merencio da Luz - @xyzmerencio<br>
 
 ### Modelo Físico
 Utilizamos a ferramenta [MySQL Workbench](https://www.mysql.com/products/workbench/) para a modelagem de dados e criação do modelo físico do banco de dados.<br>
-A imagem do modelo físico do banco de dados pode ser encontrada [aqui](https://github.com/lugialo/projeto_banco2/blob/main/modelo_fisico/dump_clinica_odonto.png)
+A imagem do modelo físico do banco de dados pode ser encontrada [aqui](https://github.com/lugialo/projeto_banco2/blob/main/modelo_fisico/dump_clinica_odonto.png).
 
 ### Dicionário de Dados
 [Link](https://github.com/lugialo/projeto_banco2/blob/main/dicionario_dados/dicionarioDeDadosConsultorio.xlsx)
 
 ### Scripts SQL
-Para este projeto, utilizamos o banco de dados [MySQL](https://www.mysql.com/)
-Para hospedagem, utilizamos o serviço do [Digital Ocean](https://www.digitalocean.com/)
+Para este projeto, utilizamos o banco de dados [MySQL](https://www.mysql.com/).
+<br>Para hospedagem, utilizamos o serviço do [Digital Ocean](https://www.digitalocean.com/).
 
 Abaixo, segue os scripts SQL separados por tipo:
 (falta organizar essa parte)
