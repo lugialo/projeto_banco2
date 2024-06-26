@@ -11,10 +11,10 @@ Vitor Merencio da Luz - @xyzmerencio<br>
 
 ### Modelo Físico
 Utilizamos a ferramenta [MySQL Workbench](https://www.mysql.com/products/workbench/) para a modelagem de dados e criação do modelo físico do banco de dados.<br>
-O arquivo fonte para montar o modelo na ferramenta pode ser encontrado [aqui](https://github.com/lugialo/projeto_banco2/blob/main/modelo_fisico/dump_clinica_odonto.mwb)
+A imagem do modelo físico do banco de dados pode ser encontrada [aqui](https://github.com/lugialo/projeto_banco2/blob/main/modelo_fisico/dump_clinica_odonto.png)
 
 ### Dicionário de Dados
-(falta terminar)
+[Link](https://github.com/lugialo/projeto_banco2/blob/main/dicionario_dados/dicionarioDeDadosConsultorio.xlsx)
 
 ### Scripts SQL
 Para este projeto, utilizamos o banco de dados [MySQL](https://www.mysql.com/)
@@ -32,4 +32,4 @@ Abaixo, segue os scripts SQL separados por tipo:
 [Código Fonte](https://github.com/lugialo/projeto_banco2/tree/main/backend)
 
 ### Relatório Final
-(falta essa parte)
+[Link](https://github.com/lugialo/projeto_banco2/blob/main/relatorio/relatorio_final_trabalho_clinica_odontologia.docx)
