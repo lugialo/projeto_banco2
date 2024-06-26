@@ -76,7 +76,7 @@ INSERT INTO pagamento (valor_pago, data_pagamento, tipo_pagamento_id_tipo_pagame
 (150.00, '2024-06-15 17:30:00', 1, 9),
 (80.00, '2024-06-15 18:30:00', 2, 10);
 
-INSERT INTO consulta_procedimento (consulta_id_consulta, consulta_id_procedimento) VALUES
+INSERT INTO consulta_procedimento (consulta_id_consulta, procedimento_id_procedimento) VALUES
 (1, 8),  -- Tratamento de restauração -> Restauração
 (2, 2),  -- Extração do dente afetado -> Extração
 (3, 3),  -- Início do tratamento de canal -> Canal

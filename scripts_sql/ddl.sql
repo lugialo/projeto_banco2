@@ -47,12 +47,6 @@ create table agendamento
         foreign key (paciente_id_paciente) references paciente (id_paciente)
 );
 
-create index fk_agendamento_odontologista1_idx
-    on agendamento (odontologista_id_odontologista);
-
-create index fk_agendamento_paciente1_idx
-    on agendamento (paciente_id_paciente);
-
 create table consulta
 (
     id_consulta                int auto_increment
@@ -64,9 +58,6 @@ create table consulta
     constraint fk_consulta_agendamento1
         foreign key (agendamento_id_agendamento) references agendamento (id_agendamento)
 );
-
-create index fk_consulta_agendamento1_idx
-    on consulta (agendamento_id_agendamento);
 
 create table procedimento
 (
@@ -89,12 +80,6 @@ create table consulta_procedimento
         foreign key (procedimento_id_procedimento) references procedimento (id_procedimento)
 );
 
-create index fk_consulta_procedimento_consulta1_idx
-    on consulta_procedimento (consulta_id_consulta);
-
-create index fk_consulta_procedimento_procedimento1_idx
-    on consulta_procedimento (procedimento_id_procedimento);
-
 create table tipo_pagamento
 (
     id_tipo_pagamento        int auto_increment
@@ -115,9 +100,3 @@ create table pagamento
     constraint fk_pagamento_tipo_pagamento
         foreign key (tipo_pagamento_id_tipo_pagamento) references tipo_pagamento (id_tipo_pagamento)
 );
-
-create index fk_pagamento_consulta1_idx
-    on pagamento (consulta_id_consulta);
-
-create index fk_pagamento_tipo_pagamento_idx
-    on pagamento (tipo_pagamento_id_tipo_pagamento);
