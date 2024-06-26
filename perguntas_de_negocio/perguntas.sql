@@ -135,6 +135,10 @@ CREATE TRIGGER AfterDeletePagamento
 
 -- 4 - Qual é o meio de pagamento mais utlizado, nos ultimos 6 meses, entre pacientes do sexo feminino na faixa etária de 18 a 55 anos, em ordem decrescente?
 
+CREATE INDEX idx_pagamento_consulta ON pagamento (consulta_id_consulta); -- Para queries com relação ao pagamento
+CREATE INDEX idx_paciente_id ON paciente (id_paciente); -- Para queries buscando por um paciente específico.
+
+
 DROP IF EXISTS PROCEDURE RelatorioPagamentosPorGeneroIdade
 -- Dropa a procedure, se existir.
 
